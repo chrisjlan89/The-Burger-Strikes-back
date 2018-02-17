@@ -1,0 +1,111 @@
+
+@keyframes moveInRight{
+    0%{
+       opacity: 0;
+       transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+
+
+@keyframes moveInTop{
+    0%{
+       opacity: 0;
+       transform:  translateY(-30px) 
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+       opacity: 0;
+       transform: translateY(30px);
+    }
+
+    
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+@keyframes moveInLeft{
+    0%{
+       opacity: 0;
+       transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+
+
+
+
+body{
+    font-family: 'Cabin Sketch', cursive;
+    background-color: rgba(29, 238, 238, 0.781);
+}
+
+
+img{
+    margin : 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    animation: moveInTop .5s ease-out .75s;
+}
+
+.devour{
+    float: right;
+    
+}
+
+
+
+.menu{
+    animation: moveInLeft .5s ease-out .75s;
+}
+
+.devoured-list{
+    animation: moveInRight .5s ease-out .75s;
+}
+
+.burger-form-box{
+    animation: moveInBottom .5s ease-out .75s;
+}
+
+
+li{
+    margin: 2%;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+
+
+
+
+
+
+ 

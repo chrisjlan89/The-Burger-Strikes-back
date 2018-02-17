@@ -1,0 +1,69 @@
+
+
+
+
+
+<div class = "container-fluid">
+<div class ="row">
+<img src = "assets/img/burger.png">
+</div>
+
+<div class ="row">
+
+
+
+
+<div class = "col-md-3 offset-md-3 menu">
+    <h2> These burgers  be on the menu </h2>
+<ul class = "list-group">
+  {{#each burgers}}
+    {{#unless devoured}}
+     <li class = "list-group-item" id = "{{this.id}}">{{this.burger_name}} <button class = " btn btn-primary devour" id = "{{this.id}}"> Devour</button></li>
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+
+
+<div class = "col-md-3 offset-md-1 devoured-list">
+<h2> Eatededed Burgers</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+    <li class = "list-group-item" id = "{{this.id}}">{{this.burger_name}} </li>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+</div>
+
+<div class = 'row add-burg-row'>
+<div class = "col-md-5 offset-md-4">    
+<div class = "burger-form-box">
+<h2>Add a burger</h2>
+<form class="create-form">
+
+
+
+  <div class="form-group">
+    <label for="burg"></label>
+    <textarea class="form-control" id="burg" rows="3"></textarea>
+  </div>
+
+
+
+    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
