@@ -1,33 +1,41 @@
-// Inside your burger directory, create a folder named controllers.
 
-// In controllers, create the burgers_controller.js file.
-
-// Inside the burgers_controller.js file, import the following:
-
-// Express
-// burger.js
-// Create the router for the app, and export the router at the end of your file.
 
 var express = require("express");
-var burger = require("../models/burger.js");
+var burger = require("../models");
 
 var router = express.Router();
 
 
+    // HTML Route
+
+    // router.get('/', function(req, res) {
+    //   res.sendFile(__dirname + "/../views/index.html");
+    // })
+  
+
+
 router.get("/", function(req, res) {
-    burger.all(function(data) {
-      var burgers = {
-         burgers : data
-       };
-      console.log( "burgers" , burgers);
-      res.render("index", burgers);
-    });
+  
+  burger.Burgers.findAll({
+    
+  }).then(function(dbBurger) {
+       console.log( "burgers" , dbBurger[0].burgerName)
+    res.render("index", {burgers : dbBurger});
+  })
+  
+  
   });
   
   router.post("/api/burgers", function(req, res) {
-    burger.create(["burger_name", "devoured"], [req.body.burger_name , 0], function(result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
+    console.log(req.body)
+   burger.Burgers.create({
+      
+      burgerName : req.body.burger_name,
+      devoured : 0
+     
+  }).then(function(dbBurger){
+    res.json(dbBurger)
+  
     });
   });
   
@@ -37,24 +45,18 @@ router.get("/", function(req, res) {
     var burgerId = req.params.id;
   
     console.log("burgerId", burgerId);
+   burger.Burgers.update({devoured : 1}, {where :{ id : burgerId}
+      
+    }).then(function(dbBurger){
+      res.json(dbBurger)
+    })
+    });
     
-    burger.update(
-      {
-        devoured: 1
-      },
+   
 
-      burgerId,
+
     
-      function(result) {
-        if (result.changedRows === 0) {
-          // If no rows were changed, then the ID must not exist, so 404
-          return res.status(404).end();
-        }
-        res.status(200).end();
-  
-      }
-    );
-  });
+   
   
   // Export routes for server.js to use.
   module.exports = router;

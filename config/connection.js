@@ -14,7 +14,7 @@ if(process.env.JAWSDB_URL) {
         host: "localhost",
         user: "root",
         password: "chris",
-        database: "burger_db",
+        database: "burger2_db",
     });
 };
 
@@ -32,18 +32,3 @@ connection.connect(function(err) {
 module.exports = connection;
 
 
-
-
-
-
-
-
-
-
-// var connection = mysql.createConnection({
-//   port: 3306,
-//   host: "localhost",
-//   user: "root",
-//   password: "chris",
-//   database: "burger_db"
-// });

@@ -13,7 +13,7 @@
       data : newBurger
      }).then(
          function() {
-        
+        location.reload();
          }
      )
 
