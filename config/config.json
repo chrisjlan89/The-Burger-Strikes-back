@@ -16,7 +16,7 @@
   "production": {
     "username": "m9a37t4g6qmj5u26",
     "password": "aoex4x4f0k0a8f7m",
-    "database": "",
+    "database": "u4htjzb09mp24syz",
     "host": "mna97msstjnkkp7h.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
