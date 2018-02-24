@@ -3,7 +3,7 @@
     event.preventDefault();
     
     var newBurger = {
-        burger_name : $("#burg").val().trim()
+        burgerName : $("#burg").val().trim()
        
     }
 
