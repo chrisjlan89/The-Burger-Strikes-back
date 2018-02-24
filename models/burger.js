@@ -1,9 +1,3 @@
-// require Sequelize
-var Sequelize = require('sequelize');
-// make sequelize object using connection export
-var sequelize = require('../config/connection.js');
-
-
 module.exports = function(sequelize, DataTypes) {
   var Burgers = sequelize.define("Burgers", {
     burgerName: {
