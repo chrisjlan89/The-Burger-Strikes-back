@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     devoured : { 
-      type: Sequelize.BOOLEAN
+      type: DataTypes.BOOLEAN
       , allowNull: false
       , defaultValue: false }
   });
