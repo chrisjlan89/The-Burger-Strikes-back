@@ -19,7 +19,7 @@ router.get("/", function(req, res) {
   burger.Burgers.findAll({
     
   }).then(function(dbBurger) {
-       console.log( "burgers" , dbBurger[0].burgerName)
+      
     res.render("index", {burgers : dbBurger});
   })
   
