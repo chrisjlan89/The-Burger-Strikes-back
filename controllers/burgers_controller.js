@@ -30,7 +30,7 @@ router.get("/", function(req, res) {
     console.log(req.body)
    burger.Burgers.create({
       
-      burgerName : req.body.burger_name,
+      burgerName : req.body.burgerName,
       devoured : 0
      
   }).then(function(dbBurger){
